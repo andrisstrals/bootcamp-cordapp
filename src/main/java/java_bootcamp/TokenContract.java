@@ -57,9 +57,6 @@ public class TokenContract implements Contract {
             if(!requiredSigners.contains(issuersKey)) {
                 throw new IllegalArgumentException("Issuer is required signer");
             }
-//            if(!(requiredSigners.contains(ownersKey))) {
-//                throw new IllegalArgumentException("Owner must sign the transaction");
-//            }
         }
         else {
             throw new IllegalArgumentException("Command type not recognised");
