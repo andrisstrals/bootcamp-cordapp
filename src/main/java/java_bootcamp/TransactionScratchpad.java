@@ -13,7 +13,7 @@ public class TransactionScratchpad {
     public static void main(String[] args) {
         TransactionBuilder builder = new TransactionBuilder();
 
-        StateAndRef<ContractState> inputSTate = null;
+        StateAndRef<ContractState> inputState = null;
         ContractState outputState = new HouseState("123 Moorfield", null);
         PublicKey requiredSigner = ((HouseState) outputState).getOwner().getOwningKey();
         List<PublicKey> requiredSigners = ImmutableList.of(requiredSigner);
@@ -22,7 +22,7 @@ public class TransactionScratchpad {
 
         builder.setNotary(notary);
         builder
-                .addInputState(inputSTate)
+                .addInputState(inputState)
                 .addOutputState(outputState, "java_bootcamp.HouseContract")
                 .addCommand(new HouseContract.Register(), requiredSigners);
 //        builder.verify();
